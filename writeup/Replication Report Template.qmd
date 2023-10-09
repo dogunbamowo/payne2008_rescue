@@ -12,7 +12,37 @@ format:
 
 ## Introduction
 
-[No abstract is needed.]  Each replication project will have a straightforward, no frills report of the study and results.  These reports will be publicly available as supplementary material for the aggregate report(s) of the project as a whole.  Also, to maximize project integrity, the intro and methods will be written and critiqued in advance of data collection.  Introductions can be just 1-2 paragraphs clarifying the main idea of the original study, the target finding for replication, and any other essential information.  It will NOT have a literature review -- that is in the original publication. You can write both the introduction and the methods in past tense.  
+[No abstract is needed.]  Each replication project will have a straightforward, no frills report of the study and results.  These reports will be publicly available as supplementary material for the aggregate report(s) of the project as a whole.  Also, to maximize project integrity, the intro and methods will be written and critiqued in advance of data collection.  Introductions can be just 1-2 paragraphs clarifying the main idea of the original study, the target finding for replication, and any other essential information.  It will NOT have a literature review -- that is in the original publication. You can write both the introduction and the methods in past tense.
+
+A short justification for your choice of experiment in terms of your research interests or research program (1 paragraph).
+
+
+I am working with James Gross in the affective area, and the study of sleep and affect is a domain I am interested in. The lab just recently completed a large study on sleep bruxism and emotion regulation, and replicating this study will be a good way to prepare myself for exploring the lab’s data, and engaging with the relevant literature. 
+
+
+
+A description of the stimuli and procedures that will be required to conduct this experiment, and what the challenges will be (1-2 paragraphs).
+
+
+Stimuli for this study include images containing a combination of an negative emotionally arousing object (a car crash), with a neutral background scene (a street), or a neutral object (a car) with a neutral background. Participants will be put into two groups. One group will view the set of images in the morning and the other group will view the images in the evening. Both groups will wait 12 hours (the morning group are not allowed to nap during the day), and will then be tested on how much they remember from the scenes they viewed earlier. During the test, they will be shown images that are either identical to the images they viewed earlier, images with similar object and background emotion valence to one they viewed earlier, or a new object. Participants will say whether they thought the image was identical, similar or new, for each image they are presented with during the test. The idea behind this study is to see whether emotionally arousing stimuli is better remembered than neutral stimuli after a night of sleep. 
+
+
+I think it might be difficult to get enough participants for this study. This was something Jinxiao, the student who ran the original replication, struggled with. I imagine I would have to start collecting data relatively earlier in the quarter to get a larger sample. 
+
+
+Secondly, this is not a a study that a participant can do in one 30 minute sitting. This will require them to participate at times both before and after sleep, and with 12 hour-long intervals between survey completions. Because participants won’t be in a lab, we won’t be able to monitor whether they  actually follow the study guidelines which may have a large impact on the resulting effect size. 
+
+
+
+
+A link to the repository and to the original paper (as hosted in your repo). The goal is that we should be able to click on these links and review that your repo is formatted right and look at the original paper. 
+
+
+Rescue Repository: https://github.com/dogunbamowo/payne2008_rescue
+Original Replication Repository: https://github.com/psych251/payne2008
+Original Paper (as hosted in my repo): https://github.com/dogunbamowo/payne2008_rescue/blob/main/original_paper/payne-et-al-2008-sleep-preferentially-enhances-memory-for-emotional-components-of-scenes.pdf
+
+
 
 
 ## Summary of prior replication attempt
