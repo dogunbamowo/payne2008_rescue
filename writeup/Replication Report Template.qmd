@@ -200,7 +200,11 @@ The analyses as specified in the analysis plan.
 
 *Three-panel graph with original, 1st replication, and your replication is ideal here*
 
+**SINGLE statistical test that justifies the main inference of the paper**
 **2 (condition: sleep, wake) x 2 (valence: negative, neutral) x 2 (scene component: object, background) mixed ANOVA on general recognition of objects**
+
+
+**Further Analsyses**
 
 **2 (condition: sleep, wake) x 2 (valence: negative, neutral) mixed ANOVA on the general recognition**
 
