@@ -2,8 +2,8 @@
 title: "Replication of Sleep Preferentially Enhances Memory for Emotional Components of Scenes by Payne, Stickgold, Swanberg and Kensinger (2008, Psychological Science)"
 author: "Daniel Ogunbamowo (dogun@stanford.edu)"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
-format: html
-html: 
+output:
+  html_document:
     toc: true
     toc_depth: 3
 ---
@@ -44,19 +44,10 @@ html:
 
 
 
+
 ## Summary of prior replication attempt
 
 Based on the prior write-up, describe any differences between the original and 1st replication in terms of methods, sample, sample size, and analysis. Note any potential problems such as exclusion rates, noisy data, or issues with analysis. 
-
-
-**The first replication project differed from the original in that it recruited online crowd workers (MTurk), whereas the participants from the original study were college students at Harvard and Boston College. The replication project experiments were also run online, whereas the original experiment was done in person, in a lab. **
-
-**In the original experiment, participants were randomly assigned to one of two possible conditions (one in which they would view a set of stimuli after sleeping and the other after 12 hours awake). In the replication, participants were allowed to self-select which condition they would be in. This presents a strong chance of selection bias, and also reduces our opportunity to make causal inferences from the results.**
-
-**The replication attempted to recruit 48 participants, but only ended up being able to include 23 participants in the final analysis due to so many of them dropping out. The original study recruited 88 participants.** 
-
-
-
 
 ## Methods
 
@@ -72,42 +63,17 @@ How much power does your planned sample have for original effect? For an attenua
 
 Planned sample size and/or termination rule, sampling frame, known demographics if any, preselection rules if any.
 
-**I plan to recruit at least 88 participants using prolific. This figure may change after power analyses are completed, however, seeing as this is a rescue attempt of a replication that may have failed largely due to a small sample size, I think it makes sense to plan for a sufficiently large sample. Participants who complete neither or only one of the two required experiment conditions will be removed from any analyses.**
-
-**In the replication project, 91.3% of the sample had finished or attended college, so I will attempt to collect a sample that is more diverse in SES.**
-
-
 ### Materials
 
 All materials - can quote directly from original article - just put the text in quotations and note that this was followed precisely.  Or, quote directly and just point out exceptions to what was described in the original article.
-
-**"The scenes portrayed negative arousing or neutral objects placed on plausible neutral backgrounds. For each of 64 scenes (e.g., a car on a street), we created eight different versions by placing each of two similar neutral objects (e.g., two images of a car) and each of two related negative objects (e.g., two images of a car accident) on each of two plausible neutral backgrounds (e.g., two images of a street). An additional 32 scenes served as lures on a recognition memory test (Fig. 1). Participants in a previous study had rated the objects and backgrounds for valence and arousal, using 7-point scales (Kensinger, Garoff-Eaton, & Schacter, 2006). All negative objects had received arousal ratings of 5 to 7 (with high scores signifying an exciting or arousing image) and valence ratings lower than 3 (with low scores signifying a negative image). All neutral items (objects and backgrounds) had been rated as nonarousing (arousal values lower than 4) and neutral (valence ratings between 3 and 5)."**
-
-**This will be followed precisely.**
-
-**Fig. 1. "Examples of the scenes presented to subjects. Eight versions of each scene were created by combining each of four similar objects (two neutral objects, two negative and arousing emotional objects) with each of two plausible neutral backgrounds. In this example, the two neutral central objects are cars, and the two negative central objects are cars damaged in an accident; the neutral backgrounds are street scenes. Two of the eight versions of the completed scene are shown."  http://journals.sagepub.com/na101/home/literatum/publisher/sage/journals/content/pssa/2008/pssa_19_8/j.1467-9280.2008.02157.x/20160829/images/medium/10.1111_j.1467-9280.2008.02157.x-fig1.gif **
 
 ### Procedure	
 
 Can quote directly from original article - just put the text in quotations and note that this was followed precisely.  Or, quote directly and just point out exceptions to what was described in the original article.
 
-**"Participants studied a set of 64 scenes (32 with a neutral object and 32 with a negative object, all on neutral backgrounds) for 5 s each, and then indicated on a 7-point scale whether they would approach or move away from the scene if they encountered it in real life. This task was used to maximize encoding.**
-
-**After the delay period, participants performed an unexpected, self-paced recognition task. During this task, objects and backgrounds were presented separately and one at a time. Some of these objects and backgrounds were identical to the scene components that had been studied (e.g., the same car accident), others were the alternate version of the object or background and therefore shared the same verbal label but differed in specific visual details (e.g., a similar car accident), and others were objects or backgrounds that had not been studied (new). Participants never saw both the same and the similar version of an item at test. Each object or background was presented with a question (e.g., "Did you see a monkey?"). If the answer to the question was "yes," participants pressed one button to indicate that the object or background was an exact match to a studied component ("same") or a second button to indicate that it was not an exact match ("similar"). If the answer to the question was "no," they pressed a third button.”**
-
-**The recognition task includes 32 same objects (16 negative, 16 neutral), 32 similar objects (16 negative, 16 neutral), 32 new objects (16 negative, 16 neutral), 32 same backgrounds (16 previously shown with a negative object, 16 previously shown with a neutral object), 32 similar backgrounds (16 previously shown with a negative object, 16 previously shown with a neutral object), and 32 new backgrounds."**
-
-**This will be followed precisely. For the replication project, the experiment sessions before and after the delay period will be referred to as Session 1 and Session 2 respectively. I will also do this for my rescue attempt.** 
-
-
 ### Controls
 
 What attention checks, positive or negative controls, or other quality control measures are you adding so that a (positive or negative) result will be more interpretable?
-
-**Neither the original study, nor the replication controlled for sleep quality and number of hours slept, but I think it would be useful to control for this in the rescue attempt.** 
-
-**I also think it might be useful to periodically check with participants whether they actually find some of the stimuli to be negatively or neutrally arousing, which was the intention of the creators of the stimuli. After looking through the images that make up the stimulus set, whilst some of them may induce negative affect, some seemed too unrealistic to induce negative affect, or just seemed like they would stand out as being strange rather than negative (potentially due to appearing poorly photoshopped). This might need to be done with a separate set of participants in a different experiment.**
-
 
 
 ### Analysis Plan
@@ -116,27 +82,9 @@ Can also quote directly, though it is less often spelled out effectively for an 
 
 **Clarify key analysis of interest here**  You can also pre-specify additional analyses you plan to do.
 
-**"We scored a response as specific recognition of visual details when a subject correctly responded "same" to a same item, but as general recognition without specific details when a subject responded "similar" to a same item. Because "similar" responses were constrained by the number of "same" responses (i.e., subjects responded "similar" only when they did not remember the visual details), we computed the general recognition score as the proportion of "similar" responses after exclusion of "same" responses (similar/[1- same])." "Specific and general recognition scores were computed separately for central objects (negative or neutral) and for the peripheral neutral backgrounds (studied with either a negative or a neutral object)."**
-
-**I will follow the replication, which planned to perform a 2 (condition: sleep, wake) x 2 (valence: negative, neutral) x 2 (scene component: object, background) mixed ANOVA. As well as a follow-up 2 (condition: sleep, wake) x 2 (valence: negative, neutral) mixed ANOVA applied on the recognition of objects and backgrounds separately.**
-
-**Time and funds permitting, I also plan to do additional analyses double checking the valence ratings of the stimulus, as well as whether sleep quality (low, medium, high) has any potential interaction effect.**
-
-
 ### Differences from Original Study and 1st replication
 
 Explicitly describe known differences in sample, setting, procedure, and analysis plan from original study.  The goal, of course, is to minimize those differences, but differences will inevitably occur.  Also, note whether such differences are anticipated to make a difference based on claims in the original article or subsequent published research on the conditions for obtaining the effect.
-
-**Key Differences**
-
-**- I aim to recruit a sample greater than that of the original study (n = 88) and the first replication (n = 23)**
-**- I intend to recruit a sample diverse in SES**
-**- Participants will be randomly assigned to one of the two conditions (sleep or wake), rather than assigning themselves to a condition**
-**- The original study was done in-person, and replication was done online using Mturk workers. I will do my rescue online using prolific workers** 
-**- I plan to run a smaller parallel study confirming the valence ratings of the stimuli by the original authors**
-**- I plan to ask participants in all conditions about their sleep quality the previous night when they complete the second of the two experimental sessions**
-**- I plan to include sleep quality in an additional mixed ANOVA. This may result in a slight change to the original claims of the article, which were that sleep preferentially enhances memory for emotional components of scenes. A novel result for this control would result in a new claim: Depending on sleep quality, sleep preferentially enhances memory for emotional components of scenes**
-
 
 ### Methods Addendum (Post Data Collection)
 
@@ -155,44 +103,248 @@ You can comment this section out prior to final report with data collection.
 ### Data preparation
 
 Data preparation following the analysis plan.
-	
-```{r include=T}
-### Data Preparation
 
-#### Load Relevant Libraries and Functions
+```{r include = F}
+###Data Preparation
+# dowload from Qualtrics
+
+####Load Relevant Libraries and Functions
 library(qualtRics)
 library(tidyverse)
-library(lubridate)
 library(ggplot2)
+library(cowplot)
+library(stringr)
+library(lubridate)# date and time
+library(ez) # for repeated-measure ANOVA
+library(lme4)
+library(lmerTest) #optional: show p-value in lmer summary
+library(scales) # print percentage
+library(knitr)
 
+```
 
-#### Import data
+```{r }
+####Import data #all data should be exported from qualtrics as "choice text", not numerical
+#session 1 data 
+data_s1 <- readSurvey("~/Downloads/PSYCH251 Session 1 - Time Restrictions Removed_November 5, 2023_16.06.csv")
+#wake group data
+data_s2_wake <- readSurvey("~/Downloads/PSYCH251 Session 2_wake - Time Restrictions Removed_November 5, 2023_16.06.csv") %>% 
+  mutate(condition = "wake")
+#sleep group data
+data_s2_sleep <- readSurvey("~/Downloads/PSYCH 251 Session 2_sleep Time Restrictions Removed_November 5, 2023_16.07.csv") %>% 
+  mutate(condition = "sleep")
 
-# Read in stimuli rating data
-# Read in session 1 data
-# Read in session 2 data
-
+#combine the two raw datasets
+data_s2 <- rbind(data_s2_wake,data_s2_sleep)
 
 #### Data exclusion / filtering
+# clean s1 data
+data_s1_clean <- data_s1 %>% 
+  select(-contains("Q34"), -contains("Q35"), -contains("Q19"), -contains("Q24"), -contains("prac")) #%>% 
+  #filter(!is.na(am_or_pm))  
 
-# Filter out participants who did not complete session 2
-# Filter out participants who completed session 2 outside of study window
+# final data collection started on 2018/12/12
+#data_s1_clean <- data_s1_clean[mdy_hm(data_s1_clean$StartDate) >= ymd("2018-12-12"),]
+
+# mark S1 variable names
+names(data_s1_clean) <- str_c("s1_", names(data_s1_clean))
+
+# clean s2 data
+data_s2_clean <- data_s2 %>% 
+  select(-contains("Q34"), -contains("Q35"), -contains("Q31"), -contains("Q42"), -contains("Q43"), -starts_with("Recipient"), -contains("s2p")) %>% 
+  filter(!is.na("sleep_log#4_1"), 
+         code_s1 != "999999", code_s1 != "99999", code_s1 != "888888")
+
+```
+
+```{r}
+
+# final data collection started on 2018/12/12
+#data_s2_clean <- data_s2_clean[mdy_hm(data_s2_clean$StartDate) >= ymd("2018-12-12"),]
+
+# categorize participants into sleep-condition and wake-condition
+#data_s2_clean <- data_s2_clean %>% 
+  #mutate(time = mdy_hm(StartDate), condition = ifelse(hour(time) >= 5 & hour(time) <= 12, "sleep", "wake")) # considering time difference, the sleep group (across the US) starts Session 2 between 5 am and 12 pm 
+
+# join s1 and s2 data
+data_s1s2 <- left_join(data_s2_clean, data_s1_clean, by = c("code_s1" = "s1_code"))
+
+# calculate the s1-s2 time gap
+data_s1s2 = data_s1s2 %>% 
+  mutate(int = interval(start = s1_StartDate, end =  StartDate)) %>% 
+  mutate(time_gap_seconds = int_length(int)) %>% 
+  mutate(time_gap_minutes = minute(seconds_to_period(time_gap_seconds))) %>%
+  mutate(time_gap_hours = hour(seconds_to_period(time_gap_seconds))) %>% 
+  select(-(int)) 
+
+#data_s1s2 <- data_s1s2 %>% 
+  #mutate(time_gap = as.numeric(mdy_hm(StartDate) - mdy_hm(s1_StartDate), units = "hours") ) # time gap in hours
+
+# filter out participants who did not have S1 and S2 about 12 hours apart
+#data_s1s2 <- data_s1s2 %>% 
+  #filter(time_gap >10 & time_gap  < 14)
+# check the condition assignment (is it consistent with reported am_or_pm during Session 1)
 
 
+table(data_s1s2$condition, data_s1s2$s1_am_or_pm)
+
+# distribution of S2 time of the day
+ggplot(data_s1s2, aes(x = hour(StartDate), fill = condition))+
+  geom_histogram(color = 'black') +
+  labs(title = "Distribution of the time of Session 2 (in Pacific Time)", x = "Time of the day (hour)")+
+  xlim(0, 24) + scale_y_continuous(breaks=seq(0, 10, 1))
+
+# distribution of the time gap between S1 and S2
+ggplot(data_s1s2, aes(x = time_gap_hours))+
+  geom_histogram(color = 'black', fill = 'white') +
+  labs(title = "Distribution of time gap between Session 1 and Session 2", x = "duration (hours)")+
+  xlim(-1, 14)
+```
+
+```{r}
 #### Prepare data for analysis - create columns etc.
+# temp1: data with Q1 gathered (Q1: did you see this object/background?)
+data <- data_s1s2 %>% 
+  gather(item, s2_q1, contains("s2_q1")) %>% 
+  mutate(item = substr(item, 1, str_length(item)-3))
 
-# Convert csv’s into long format 
-# For stimuli csv, names as “Stimulus”, “Rating”
-# For session 2 csv, names as “Object Valence”, “Memory Response”, “Correct Response”, “Condition”
-# Calculate specific and general recognition rate
+# create item_number and rearrange the dataframe
+data <- data %>% 
+  mutate(item_number = as.numeric(str_sub(item, 1, str_length(item)-3))) %>%
+  arrange(code_s1, item_number)
 
+
+# read the stimuli list
+item_list <- read_csv('~/Downloads/questions_list.csv')
+# merge the item list to the data frame
+data_joined <-  left_join(data, item_list, by = "item_number") 
+# rearrange
+data_joined <- data_joined %>% arrange(code_s1, item_number) 
+
+## summarize into individual-wise data
+data_ind <- data_joined %>% 
+  # filter(type == "same") %>%  #only "same" trials were processed, one participant has 64 trials
+  group_by(code_s1, condition, type, component, valence, s2_q1) %>% 
+  mutate(count_ans = n()) #the number of all answers separately (same, similar, new)
+data_ind <- data_ind %>% 
+  # filter(type == "same") %>% 
+  group_by(code_s1, condition, type, component, valence) %>% 
+  mutate(count_all = n()) #the number of questions
+# collapse to individual level
+data_ind <- data_ind %>% 
+  group_by(code_s1, condition, type, component, valence, s2_q1) %>% 
+  summarise(count_ans = mean(count_ans, na.rm = T),
+            count_all = mean(count_all, na.rm = T)) %>% 
+  #filter(!is.na(s2_q1)) %>% #s2_q1 has to have a value
+  spread(s2_q1, count_ans) #spread s2_q1
+
+#replace na with 0
+data_ind[is.na(data_ind)] <-  0 
+#calculate specific and general recognition rate
+data_ind <-  data_ind %>% 
+  mutate(specific_recog = Identical/count_all, #specific recognition
+         general_recog = Similar/(count_all-Identical) #general recognition
+         ) 
+
+# order the level of condition
+data_ind$condition <- factor(data_ind$condition, levels=c('wake', 'sleep'), ordered=TRUE)
+data_ind$component <- factor(data_ind$component, levels=c('object', 'background'), ordered=TRUE)
+
+# show the head of the individual-wise data
+kable(head(data_ind, 11), digit = 2)
+```
+
+###Confirmatory analysis
+```{r}
+## 3-way anova: test on the 3-way interaction
+anova_3way = ezANOVA(
+    data = data_ind %>% filter(type == "same"),
+    dv = .(general_recog),
+    wid = .(code_s1), 
+    within = .(component, valence),
+    between = .(condition)
+)
+#Show the ANOVA & assumption tests.
+print(anova_3way)
+```
+
+```{r}
+## 2-way anova: test on the key 2-way interaction on object recognition
+anova_2way_obj = ezANOVA(
+    data = data_ind %>% filter(type == "same", component == "object"),
+    dv = .(general_recog),
+    wid = .(code_s1), 
+    within = .(valence),
+    between = .(condition)
+)
+print(anova_2way_obj)
+```
+
+```{r}
+## 2-way anova: test on the 2-way interaction on background
+anova_2way_bgd = ezANOVA(
+    data = data_ind %>% filter(type == "same", component == "background"),
+    dv = .(general_recog),
+    wid = .(code_s1), 
+    within = .(valence),
+    between = .(condition)
+)
+print(anova_2way_bgd)
+```
+
+###Data plots
+
+```{r}
+# summarize data for plotting
+data_summary <- data_ind %>% 
+  filter(type == "same") %>% 
+  group_by(condition, component,valence) %>% 
+  summarise(mean_spe_recog = mean(specific_recog, na.rm = T), 
+            sd_spe_recog = sd(specific_recog, na.rm = TRUE), 
+            se_spe_recog = sd_spe_recog/sqrt(n()), 
+            ci_spe_recog =  1.96*se_spe_recog,# qt(0.975,df=length(specific_recog)-1)
+            mean_gen_recog = mean(general_recog, na.rm = T), 
+            sd_gen_recog = sd(general_recog, na.rm = TRUE), 
+            se_gen_recog = sd_gen_recog/sqrt(n()), 
+            ci_gen_recog =  1.96*se_gen_recog, # qt(0.975,df=length(general_recog)-1)
+            # mean_all_recog = mean(all_recog, na.rm = T), 
+            # sd_all_recog = sd(all_recog, na.rm = TRUE), 
+            # se_all_recog = sd_all_recog/sqrt(n()), 
+            # ci_all_recog =  1.96*se_all_recog, # qt(0.975,df=length(general_recog)-1)
+            count = n())
+# order the level of condition
+# data_summary$condition <- factor(data_summary$condition, levels=c('wake', 'sleep'), ordered=TRUE)
+# data_summary$component <- factor(data_summary$component, levels=c('object', 'background'), ordered=TRUE)
+
+kable(head(data_summary, 8), digits = 2)
+```
+
+The results of general recognition of the two groups (wake and sleep) is in the subplot A blow.
+```{r }
+# plot general recognition
+p1 <- ggplot(data_summary , aes(x = condition, y = mean_gen_recog, fill = component))+
+  geom_bar(color = "black", stat = "identity", position=position_dodge(), width=0.5) + 
+  geom_errorbar(aes(ymin=mean_gen_recog - ci_gen_recog, ymax=mean_gen_recog + ci_gen_recog), position=position_dodge(.5), width=.2, size=1) +
+  #geom_point(data = data_ind, aes(x = condition, y = general_recog, fill = component), position=position_dodge(.5), color = "darkred", alpha = .5)+
+  facet_grid(. ~ valence)+
+  labs(title = "General recognition")+
+  scale_fill_grey()+ ggthemes::theme_few()
+
+# plot specific recognition
+p2 <- ggplot(data_summary , aes(x = condition, y = mean_spe_recog, fill = component))+
+  geom_bar(color = "black", stat = "identity", position=position_dodge(), width=0.5) + 
+  geom_errorbar(aes(ymin=mean_spe_recog - ci_spe_recog, ymax=mean_spe_recog + ci_spe_recog), position=position_dodge(.5), width=.2, size=1) +
+  #geom_point(data = data_ind, aes(x = condition, y = general_recog, fill = component), position=position_dodge(.5), color = "darkred", alpha = .5)+
+  facet_grid(. ~ valence)+
+  labs(title = "Specific recognition")+
+  scale_fill_grey()+ ggthemes::theme_few()
+
+plot_grid(p1, p2, ncol = 1, labels = c('A', 'B'))
 ```
 
 ### Results of control measures
 
-How did people perform on any quality control checks or positive and negative controls?
-
-**Using stimulus csv, calculate mean valence ratings of negatively valenced stimuli and neutrally rated stimuli**
+How did people perform on any quality control checks or positive and negative controls? 
 
 ### Confirmatory analysis
 
@@ -200,30 +352,9 @@ The analyses as specified in the analysis plan.
 
 *Three-panel graph with original, 1st replication, and your replication is ideal here*
 
-**SINGLE statistical test that justifies the main inference of the paper**
-
-**2 (condition: sleep, wake) x 2 (valence: negative, neutral) x 2 (scene component: object, background) mixed ANOVA on general recognition of objects**
-
-
-**Further Analyses**
-
-**2 (condition: sleep, wake) x 2 (valence: negative, neutral) mixed ANOVA on the general recognition**
-
-**2 (condition: sleep, wake) x 2 (valence: negative, neutral) mixed ANOVA on the recognition of backgrounds**
-
-
 ### Exploratory analyses
 
 Any follow-up analyses desired (not required).  
-
-**The results of general recognition of the two groups (wake and sleep) in plot**
-**The results of specific recognition in plot**
-
-**Exploratory Analysis**
-
-**2 (condition: sleep, wake) x 2 (valence: negative, neutral) x 2 (scene component: object, background) x 2 (sleep quality: high, low)  mixed ANOVA on general recognition of objects**
-
-
 
 ## Discussion
 
