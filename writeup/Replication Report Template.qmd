@@ -372,6 +372,10 @@ Any follow-up analyses desired (not required).
 
 ## Mini meta analysis
 
+**For the 3-way interaction between condition, object and valence**
+**- the original study had an F statistic of 13.1 and a p-value of 0.001**
+**- the original replication had an F statistic of 0.8344312 and p-value of 0.371363404.**
+
 Combining across the original paper, 1st replication, and 2nd replication, what is the aggregate effect size? 
 
 ### Summary of Replication Attempt
