@@ -8,11 +8,14 @@ output:
     toc_depth: 3
 ---
 
+*Links to*
+[github repo](https://github.com/dogunbamowo/payne2008_rescue, [osf preregistration](https://osf.io/q8rv2), and [the original paper](https://github.com/dogunbamowo/payne2008_rescue/blob/main/original_paper/payne-et-al-2008-sleep-preferentially-enhances-memory-for-emotional-components-of-scenes.pdf)
+
 
 Based on the prior write-up, describe any differences between the original and 1st replication in terms of methods, sample, sample size, and analysis. Note any potential problems such as exclusion rates, noisy data, or issues with analysis. 
 
 
-**The first replication project differed from the original in that it recruited online crowd workers (MTurk), whereas the participants from the original study were college students at Harvard and Boston College. The replication project experiments were also run online, whereas the original experiment was done in person, in a lab. **
+**The first replication project differed from the original in that it recruited online crowd workers (MTurk), whereas the participants from the original study were college students at Harvard and Boston College. The replication project experiments were also run online, whereas the original experiment was done in person, in a lab.**
 
 **In the original experiment, participants were randomly assigned to one of two possible conditions (one in which they would view a set of stimuli after sleeping and the other after 12 hours awake). In the replication, participants were allowed to self-select which condition they would be in. This presents a strong chance of selection bias, and also reduces our opportunity to make causal inferences from the results.**
 
@@ -28,7 +31,11 @@ How much power does your planned sample have for original effect? For an attenua
 
 Planned sample size and/or termination rule, sampling frame, known demographics if any, preselection rules if any.
 
-**I plan to recruit at least 88 participants using prolific. This figure may change after power analyses are completed, however, seeing as this is a rescue attempt of a replication that may have failed largely due to a small sample size, I think it makes sense to plan for a sufficiently large sample. Participants who complete neither or only one of the two required experiment conditions will be removed from any analyses.**
+**I plan to recruit 110 participants using prolific. Seeing as this is a rescue attempt of a replication that may have failed largely due to a small sample size, I think it makes sense to plan for a sufficiently large sample. The original study recruited 88 participants so I chose 110 partly to recruit more particiapnts than they did, but also due to financial constraints and to keep the total cost of this experiment to around $350.**
+
+### Exclusion Criteria
+
+**Participants who complete neither or only one of the two required experiment conditions will be removed from any analyses.**
 
 **In the replication project, 91.3% of the sample had finished or attended college, so I will attempt to collect a sample that is more diverse in SES.**
 
@@ -41,7 +48,8 @@ All materials - can quote directly from original article - just put the text in 
 
 **This will be followed precisely.**
 
-**Fig. 1. "Examples of the scenes presented to subjects. Eight versions of each scene were created by combining each of four similar objects (two neutral objects, two negative and arousing emotional objects) with each of two plausible neutral backgrounds. In this example, the two neutral central objects are cars, and the two negative central objects are cars damaged in an accident; the neutral backgrounds are street scenes. Two of the eight versions of the completed scene are shown."  http://journals.sagepub.com/na101/home/literatum/publisher/sage/journals/content/pssa/2008/pssa_19_8/j.1467-9280.2008.02157.x/20160829/images/medium/10.1111_j.1467-9280.2008.02157.x-fig1.gif **
+![**Fig. 1.** "Examples of the scenes presented to subjects. Eight versions of each scene were created by combining each of four similar objects (two neutral objects, two negative and arousing emotional objects) with each of two plausible neutral backgrounds. In this example, the two neutral central objects are cars, and the two negative central objects are cars damaged in an accident; the neutral backgrounds are street scenes. Two of the eight versions of the completed scene are shown."](http://journals.sagepub.com/na101/home/literatum/publisher/sage/journals/content/pssa/2008/pssa_19_8/j.1467-9280.2008.02157.x/20160829/images/medium/10.1111_j.1467-9280.2008.02157.x-fig1.gif)
+
 
 ### Procedure	
 
@@ -102,10 +110,14 @@ Explicitly describe known differences in sample, setting, procedure, and analysi
 
 #### Actual Sample
 
-I will be collecting data from 88 participants, which was the number of participants studied in the original paper.
+I was only able to collect data from 24 participants (one had to be excluded as they failed to wait 12 hours between completing session 1 and session 2). The sample was much smaller than expected due to diffculties getting participants to successfully complete both sessions 12 hours apart. A large number of participants (over 700) discontinued the first survey once they realised they would need to complete a second survey. 
+
+In reality, this rescue attempt did not fare any better than the original 251 replication attempt which also only recruited 23 participants. 
 
 #### Differences from pre-data collection methods plan
-  Any differences from what was described as the original plan, or “none”.
+  Any differences from what was described as the original plan, or “none”. 
+  
+**Due to existing difficulties with participant recruitment, full-random assignment would have not been feasible. However, to still keep some level of random assignment, unlike the first replication, it seemed that surveys being completed very quickly after being published on prolific acted like quasi-random assignment. All that needed to be done was to publish a survey to half the expected participants in the morning, and then publish an identical survey in the evening only available to another half of the expected number of participants. Ultimately, we ended up with 15 participants in the wake group, and 8 in the sleep group.**
 
 
 ## Results
@@ -116,8 +128,6 @@ I will be collecting data from 88 participants, which was the number of particip
 Data preparation following the analysis plan.
 
 ```{r include = F}
-###Data Preparation
-# dowload from Qualtrics
 
 ####Load Relevant Libraries and Functions
 library(qualtRics)
@@ -135,15 +145,34 @@ library(knitr)
 ```
 
 ```{r }
-####Import data #all data should be exported from qualtrics as "choice text", not numerical
-#session 1 data 
-data_s1 <- readSurvey("~/Downloads/PSYCH251 Session 1 - 2023_November 29, 2023_17.17.csv")
-#wake group data
-data_s2_wake <- readSurvey("~/Downloads/PSYCH251 Session 2_wake - 2023_December 4, 2023_22.57.csv") %>% 
+# Import data - all data should be exported from qualtrics as "choice text", not numerical
+
+# Session 1 data 
+data_s1_1 <- readSurvey("~/Downloads/PSYCH251 Session 1 - 2023_December 14, 2023_08.01.csv")
+
+data_s1_2 = readSurvey("~/Downloads/PSYCH251 Session 1 - 2023 (Overflow)_December 14, 2023_08.02.csv")
+                       
+data_s1 = rbind(data_s1_1, data_s1_2)                 
+
+
+# Session 2 - Wake group data
+data_s2_wake_1 <- readSurvey("~/Downloads/PSYCH251 Session 2_wake - 2023_December 14, 2023_08.04.csv") %>% 
   mutate(condition = "wake")
-#sleep group data
-data_s2_sleep <- readSurvey("~/Downloads/PSYCH251 Session 2_sleep 2023_December 4, 2023_23.09.csv") %>% 
+
+data_s2_wake_2 <- readSurvey("~/Downloads/PSYCH251 Session 2_wake - 2023 (Overflow)_December 14, 2023_08.05.csv") %>% 
+  mutate(condition = "wake")
+
+data_s2_wake = rbind(data_s2_wake_1, data_s2_wake_2)
+
+
+# Session 2 - sleep group data
+data_s2_sleep_1 <- readSurvey("~/Downloads/PSYCH251 Session 2_sleep 2023_December 14, 2023_08.05.csv") %>% 
   mutate(condition = "sleep")
+
+data_s2_sleep_2 <- readSurvey("~/Downloads/PSYCH251 Session 2_sleep 2023 (Overflow)_December 14, 2023_08.06.csv") %>% 
+  mutate(condition = "sleep")
+
+data_s2_sleep = rbind(data_s2_sleep_1, data_s2_sleep_2)
 
 
 #combine the two raw datasets
@@ -152,11 +181,8 @@ data_s2 <- rbind(data_s2_wake,data_s2_sleep)
 #### Data exclusion / filtering
 # clean s1 data
 data_s1_clean <- data_s1 %>% 
-  select(-contains("Q34"), -contains("Q35"), -contains("Q19"), -contains("Q24"), -contains("prac")) #%>% 
-  #filter(!is.na(am_or_pm))  
+  select(-contains("Q34"), -contains("Q35"), -contains("Q19"), -contains("Q24"), -contains("prac")) 
 
-# final data collection started on 2018/12/12
-#data_s1_clean <- data_s1_clean[mdy_hm(data_s1_clean$StartDate) >= ymd("2018-12-12"),]
 
 # mark S1 variable names
 names(data_s1_clean) <- str_c("s1_", names(data_s1_clean))
@@ -171,15 +197,8 @@ data_s2_clean <- data_s2 %>%
 
 ```{r}
 
-# final data collection started on 2018/12/12
-#data_s2_clean <- data_s2_clean[mdy_hm(data_s2_clean$StartDate) >= ymd("2018-12-12"),]
-
-# categorize participants into sleep-condition and wake-condition
-#data_s2_clean <- data_s2_clean %>% 
-  #mutate(time = mdy_hm(StartDate), condition = ifelse(hour(time) >= 5 & hour(time) <= 12, "sleep", "wake")) # considering time difference, the sleep group (across the US) starts Session 2 between 5 am and 12 pm 
-
 # join s1 and s2 data
-data_s1s2 <- left_join(data_s2_clean, data_s1_clean, by = c("code" = "s1_code"))
+data_s1s2 <- left_join(data_s2_clean, data_s1_clean, by = c("ID" = "s1_ID"))
 
 # calculate the s1-s2 time gap
 data_s1s2 = data_s1s2 %>% 
@@ -189,13 +208,14 @@ data_s1s2 = data_s1s2 %>%
   mutate(time_gap_hours = hour(seconds_to_period(time_gap_seconds))) %>% 
   select(-(int)) 
 
-#data_s1s2 <- data_s1s2 %>% 
-  #mutate(time_gap = as.numeric(mdy_hm(StartDate) - mdy_hm(s1_StartDate), units = "hours") ) # time gap in hours
+# Filter out participants who did session 2 as soon as they did session 1
+data_s1s2 = data_s1s2 %>% 
+  filter(time_gap_hours > 1)
 
-# filter out participants who did not have S1 and S2 about 12 hours apart
-#data_s1s2 <- data_s1s2 %>% 
-  #filter(time_gap >10 & time_gap  < 14)
-# check the condition assignment (is it consistent with reported am_or_pm during Session 1)
+# Filter out pilot participants. Pilot ended 11/28/2023
+
+data_s1s2 = data_s1s2 %>% 
+  filter(StartDate > "2023-11-29")
 
 
 table(data_s1s2$condition, data_s1s2$s1_am_or_pm)
@@ -226,7 +246,7 @@ data <- data %>%
   arrange(code_s1, item_number)
 
 
-# read the stimuli list
+# read in the stimuli list csv
 item_list <- read_csv('~/Downloads/questions_list.csv')
 # merge the item list to the data frame
 data_joined <-  left_join(data, item_list, by = "item_number") 
@@ -235,19 +255,18 @@ data_joined <- data_joined %>% arrange(code_s1, item_number)
 
 ## summarize into individual-wise data
 data_ind <- data_joined %>% 
-  # filter(type == "same") %>%  #only "same" trials were processed, one participant has 64 trials
+
   group_by(code_s1, condition, type, component, valence, s2_q1) %>% 
   mutate(count_ans = n()) #the number of all answers separately (same, similar, new)
 data_ind <- data_ind %>% 
-  # filter(type == "same") %>% 
   group_by(code_s1, condition, type, component, valence) %>% 
   mutate(count_all = n()) #the number of questions
+
 # collapse to individual level
 data_ind <- data_ind %>% 
   group_by(code_s1, condition, type, component, valence, s2_q1) %>% 
   summarise(count_ans = mean(count_ans, na.rm = T),
             count_all = mean(count_all, na.rm = T)) %>% 
-  #filter(!is.na(s2_q1)) %>% #s2_q1 has to have a value
   spread(s2_q1, count_ans) #spread s2_q1
 
 #replace na with 0
@@ -268,6 +287,8 @@ kable(head(data_ind, 11), digit = 2)
 
 ###Confirmatory analysis
 
+## Key Statistic
+
 ```{r}
 ## 3-way anova: test on the 3-way interaction
 anova_3way = ezANOVA(
@@ -280,6 +301,7 @@ anova_3way = ezANOVA(
 #Show the ANOVA & assumption tests.
 print(anova_3way)
 ```
+# Additional Analyses 
 
 ```{r}
 ## 2-way anova: test on the key 2-way interaction on object recognition
@@ -315,19 +337,12 @@ data_summary <- data_ind %>%
   summarise(mean_spe_recog = mean(specific_recog, na.rm = T), 
             sd_spe_recog = sd(specific_recog, na.rm = TRUE), 
             se_spe_recog = sd_spe_recog/sqrt(n()), 
-            ci_spe_recog =  1.96*se_spe_recog,# qt(0.975,df=length(specific_recog)-1)
+            ci_spe_recog =  1.96*se_spe_recog,
             mean_gen_recog = mean(general_recog, na.rm = T), 
             sd_gen_recog = sd(general_recog, na.rm = TRUE), 
             se_gen_recog = sd_gen_recog/sqrt(n()), 
-            ci_gen_recog =  1.96*se_gen_recog, # qt(0.975,df=length(general_recog)-1)
-            # mean_all_recog = mean(all_recog, na.rm = T), 
-            # sd_all_recog = sd(all_recog, na.rm = TRUE), 
-            # se_all_recog = sd_all_recog/sqrt(n()), 
-            # ci_all_recog =  1.96*se_all_recog, # qt(0.975,df=length(general_recog)-1)
+            ci_gen_recog =  1.96*se_gen_recog, 
             count = n())
-# order the level of condition
-# data_summary$condition <- factor(data_summary$condition, levels=c('wake', 'sleep'), ordered=TRUE)
-# data_summary$component <- factor(data_summary$component, levels=c('object', 'background'), ordered=TRUE)
 
 kable(head(data_summary, 8), digits = 2)
 ```
@@ -338,7 +353,6 @@ The results of general recognition of the two groups (wake and sleep) is in the 
 p1 <- ggplot(data_summary , aes(x = condition, y = mean_gen_recog, fill = component))+
   geom_bar(color = "black", stat = "identity", position=position_dodge(), width=0.5) + 
   geom_errorbar(aes(ymin=mean_gen_recog - ci_gen_recog, ymax=mean_gen_recog + ci_gen_recog), position=position_dodge(.5), width=.2, size=1) +
-  #geom_point(data = data_ind, aes(x = condition, y = general_recog, fill = component), position=position_dodge(.5), color = "darkred", alpha = .5)+
   facet_grid(. ~ valence)+
   labs(title = "General recognition")+
   scale_fill_grey()+ ggthemes::theme_few()
@@ -347,7 +361,6 @@ p1 <- ggplot(data_summary , aes(x = condition, y = mean_gen_recog, fill = compon
 p2 <- ggplot(data_summary , aes(x = condition, y = mean_spe_recog, fill = component))+
   geom_bar(color = "black", stat = "identity", position=position_dodge(), width=0.5) + 
   geom_errorbar(aes(ymin=mean_spe_recog - ci_spe_recog, ymax=mean_spe_recog + ci_spe_recog), position=position_dodge(.5), width=.2, size=1) +
-  #geom_point(data = data_ind, aes(x = condition, y = general_recog, fill = component), position=position_dodge(.5), color = "darkred", alpha = .5)+
   facet_grid(. ~ valence)+
   labs(title = "Specific recognition")+
   scale_fill_grey()+ ggthemes::theme_few()
@@ -359,10 +372,7 @@ plot_grid(p1, p2, ncol = 1, labels = c('A', 'B'))
 
 How did people perform on any quality control checks or positive and negative controls?
 
-```{r}
-
-```
-
+**The original authors published a replication of their original study in 2022 (Denis et al., 2022) where they included a condition with positive images. It would have been interesting to also include this condition, and included it as a control measure to test whether valence and arousal rating of positive and negatively valenced stimuli differed significantly, however, due to time and budgetary constraints, and the fact that getting participants to fulfill the existing requirements was already difficult, unfortunately, adding a positive stimuli control condition was not possible.**
 
 ### Exploratory analyses
 
@@ -373,15 +383,145 @@ Any follow-up analyses desired (not required).
 ## Mini meta analysis
 
 **For the 3-way interaction between condition, object and valence**
-**- the original study had an F statistic of 13.1 and a p-value of 0.001**
-**- the original replication had an F statistic of 0.8344312 and p-value of 0.371363404.**
+**The original study had an F statistic of 4.7 and a p-value of p<0.03**
+**the original 251 replication had an F statistic of 0.8344312 and p-value of p<0.371363404.**
+**The 2022 Original Author replication had an F statistic of 4.12 and a p-value of p<0.043**
+**My rescue had an F statistic of 1.45 and a p-value of p<0.24**
+
+```{r}
+
+effect_sizes <- data.frame(Study = c("2008 Original", "251 Replication", "2022 Replication", "Rescue"),
+                 F_Statistic = c(4.7, 0.8, 4.1, 1.45))
+effect_sizes
+
+mini_meta = ggplot(effect_sizes, aes(x = Study, y = F_Statistic)) + geom_point(shape=23, size = 4)
+mini_meta
+```
+
 
 Combining across the original paper, 1st replication, and 2nd replication, what is the aggregate effect size? 
+
+```{r, include=FALSE}
+
+# Summary stats for this study
+meta_plot_rescue = data_summary %>% 
+  filter(valence == "negative") %>% 
+  select(condition, component, mean_gen_recog, mean_spe_recog)
+
+# Writing out and reading back in the data frame corrects ordering of bar plot below
+
+write.csv(meta_plot_rescue, "~/Downloads/meta_plot_rescue.csv", row.names = FALSE)
+
+meta_plot_rescue = read.csv("~/Downloads/meta_plot_rescue.csv")
+
+# Summary stats for original 251 replication
+
+meta_plot_251_replication = read.csv("~/Downloads/original_251_replication_Summary.csv")
+
+# Summary stats for original study
+meta_plot_2008_original = read.csv("~/Downloads/original_summary.csv")
+
+# Summary stats for 2022 original author replication
+meta_plot_2022_original = read.csv("~/Downloads/2022_replication_summary.csv")
+
+
+```
+
+```{r}
+# Rescue summary stat plots
+
+rescue_plot <- ggplot(meta_plot_rescue , aes(x = condition, y = mean_gen_recog, fill = component)) +
+  geom_bar(color = "black", stat = "identity", position=position_dodge(), width=0.5) +
+  labs(title = "Rescue") +
+  scale_fill_grey()+ ggthemes::theme_few() +
+  ylab("Mean General Recognition") + xlab("Condition") +
+  scale_y_continuous(limits = c(0, 1))
+rescue_plot
+# 251 Original Replication Plot
+
+meta_plot_251 <- ggplot(meta_plot_251_replication , aes(x = condition, y = mean_gen_recog, fill = component)) +
+  geom_bar(color = "black", stat = "identity", position=position_dodge(), width=0.5) +
+  labs(title = "251 Rep") +
+  scale_fill_grey()+ ggthemes::theme_few() +
+  ylab("Mean General Recognition") + xlab("Condition") +
+  scale_y_continuous(limits = c(0, 1))
+meta_plot_251
+
+# Original 2008 Study Plot
+
+meta_plot_2008 <- ggplot(meta_plot_2008_original , aes(x = condition, y = mean_gen_recog, fill = component)) +
+  geom_bar(color = "black", stat = "identity", position=position_dodge(), width=0.5) +
+  labs(title = "2008") +
+  scale_fill_grey()+ ggthemes::theme_few() +
+  ylab("Mean General Recognition") + xlab("Condition") +
+  scale_y_continuous(limits = c(0, 1))
+meta_plot_2008
+
+# 2022 Replication Plot
+
+meta_plot_2022 <- ggplot(meta_plot_2022_original , aes(x = condition, y = mean_gen_recog, fill = component)) +
+  geom_bar(color = "black", stat = "identity", position=position_dodge(), width=0.5) +
+  labs(title = "2022 Rep") +
+  scale_fill_grey()+ ggthemes::theme_few() +
+  ylab("Mean General Recognition") + xlab("Condition") +
+  scale_y_continuous(limits = c(0, 1))
+meta_plot_2022
+
+
+rescue_plot
+meta_plot_251
+meta_plot_2008
+meta_plot_2022
+```
+
+```{r}
+# Side-by-side plots - Redoing the plots to make it cleaner
+rescue_plot <- ggplot(meta_plot_rescue , aes(x = condition, y = mean_gen_recog, fill = component)) +
+  geom_bar(color = "black", stat = "identity", position=position_dodge(), width=0.5, show.legend = FALSE) + # Removing legend to make side-by-sidep plot cleaner
+  labs(title = "Rescue") +
+  scale_fill_grey()+ ggthemes::theme_few() +
+  ylab("") + xlab("") +
+  scale_y_continuous(limits = c(0, 1)) 
+
+meta_plot_251 <- ggplot(meta_plot_251_replication , aes(x = condition, y = mean_gen_recog, fill = component)) +
+  geom_bar(color = "black", stat = "identity", position=position_dodge(), width=0.5, show.legend = FALSE) +
+  labs(title = "251 Rep") +
+  scale_fill_grey()+ ggthemes::theme_few() +
+  ylab("") + xlab("") +
+  scale_y_continuous(limits = c(0, 1))
+
+meta_plot_2022 <- ggplot(meta_plot_2022_original , aes(x = condition, y = mean_gen_recog, fill = component)) +
+  geom_bar(color = "black", stat = "identity", position=position_dodge(), width=0.5, show.legend = FALSE) +
+  labs(title = "2022 Rep") +
+  scale_fill_grey()+ ggthemes::theme_few() +
+  ylab("") + xlab("") +
+  scale_y_continuous(limits = c(0, 1))
+
+meta_plot_2008 <- ggplot(meta_plot_2008_original , aes(x = condition, y = mean_gen_recog, fill = component)) +
+  geom_bar(color = "black", stat = "identity", position=position_dodge(), width=0.5, show.legend = FALSE) +
+  labs(title = "2008") +
+  scale_fill_grey()+ ggthemes::theme_few() +
+  ylab("Mean General Recognition") + xlab("") +
+  scale_y_continuous(limits = c(0, 1))
+
+library(gridExtra)
+grid.arrange(meta_plot_2008, meta_plot_251, meta_plot_2022, rescue_plot, ncol=4)
+
+
+
+```
+
 
 ### Summary of Replication Attempt
 
 Open the discussion section with a paragraph summarizing the primary result from the confirmatory analysis and the assessment of whether it replicated, partially replicated, or failed to replicate the original result.  
 
+**This rescue attempt did not successfully replicate either the original study or the 2022 replication done by the original authors. The results from the 3-way interaction ANOVA were not statistically significant and had a small effect size (F-statistic).**
+
 ### Commentary
 
 Add open-ended commentary (if any) reflecting (a) insights from follow-up exploratory analysis, (b) assessment of the meaning of the replication (or not) - e.g., for a failure to replicate, are the differences between original and present study ones that definitely, plausibly, or are unlikely to have been moderators of the result, and (c) discussion of any objections or challenges raised by the current and original authors about the replication attempt.  None of these need to be long.
+
+**I imagine this rescue may have replicated with a large enough sample size. Unfortunately due to time, budgetary, and logistical constraints, this was not possible over the space of a single academic quarter. I think the same is true for the original 251 replication attempt which actually ended up recruiting the exact same number of participants as myself (~24). The original study was done in person, so the authors we likely able to get much better study completion rates. And for the 2022 replication, I imagined they had a team of researchers working full-time on the study. Prolific participants often found the design of the study confusing, and communicating with participants took a decent amount of time.**
+
+**Communication with the original authors and the original 251 replication author went very smoothly.**
